@@ -5,7 +5,7 @@
 
 ## 커리큘럼
 
-1. 1주차 : 자바 스크립트 개념
+1. 1주차 : 자바스크립트 개념
 
    6/29(월) : Codecademy 'Learn Javascript' Lesson 1,2,3,4 
    
