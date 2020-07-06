@@ -18,7 +18,7 @@
 
    7/6(월) : Codecademy 'Learn Javascript' Lesson 10,11,12,13,14
    
-   7/8(수) : Codecademy 'Learn Javascript' Lesson 10,11,12,13,14
+   7/8(수) : 리액트 개발환경 세팅 및 커리 정하기, Codecademy 'Learn Javascript' Lesson 10,11,12,13,14 위키정리 및 토론
    
    7/10(금) : 
    
