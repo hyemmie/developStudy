@@ -4,27 +4,28 @@
 
 ### Javascript
 
-[1. Introduction](https://github.com/hyemmie/developStudy/blob/master/Javascript/Javascript-01:-Introduction.md)
-[2. Conditional Statements](https://github.com/hyemmie/developStudy/blob/master/Javascript/Javascript-02:-Conditional-Statements.md)
-[3. Functions](https://github.com/hyemmie/developStudy/blob/master/Javascript/Javascript-03:-Functions.md)
-[4. Scope](https://github.com/hyemmie/developStudy/blob/master/Javascript/Javascript-04:-Scope.md)
-[5. Array](https://github.com/hyemmie/developStudy/blob/master/Javascript/Javascript-05:-Array.md)
-[6. Loop](https://github.com/hyemmie/developStudy/blob/master/Javascript/Javascript-06:-Loop.md)
-[7. Iterators](https://github.com/hyemmie/developStudy/blob/master/Javascript/Javascript-07:-Iterators.md)
-[8. Objects](https://github.com/hyemmie/developStudy/blob/master/Javascript/Javascript-08:-Objects.md)
-[9. Classes](https://github.com/hyemmie/developStudy/blob/master/Javascript/Javascript-09:-Classes.md)
-[10. Enviroment Configuration](https://github.com/hyemmie/developStudy/blob/master/Javascript/Javascript-10:-Enviroment-Configuration.md)
-[11. Modules](https://github.com/hyemmie/developStudy/blob/master/Javascript/Javascript-11:-Modules.md)
-[12. Promise](https://github.com/hyemmie/developStudy/blob/master/Javascript/Javascript-12:-Promise.md)
-[13. Async & Await](https://github.com/hyemmie/developStudy/blob/master/Javascript/Javascript-13:-Async-&-Await.md)
-[14. Requests](https://github.com/hyemmie/developStudy/blob/master/Javascript/JavaScript-14:-Requests.md)
+1. [Introduction](https://github.com/hyemmie/developStudy/blob/master/Javascript/Javascript-01:-Introduction.md)
+
+2. [Conditional Statements](https://github.com/hyemmie/developStudy/blob/master/Javascript/Javascript-02:-Conditional-Statements.md)
+3. [Functions](https://github.com/hyemmie/developStudy/blob/master/Javascript/Javascript-03:-Functions.md)
+4. [Scope](https://github.com/hyemmie/developStudy/blob/master/Javascript/Javascript-04:-Scope.md)
+5. [Array](https://github.com/hyemmie/developStudy/blob/master/Javascript/Javascript-05:-Array.md)
+6. [Loop](https://github.com/hyemmie/developStudy/blob/master/Javascript/Javascript-06:-Loop.md)
+7. [Iterators](https://github.com/hyemmie/developStudy/blob/master/Javascript/Javascript-07:-Iterators.md)
+8. [Objects](https://github.com/hyemmie/developStudy/blob/master/Javascript/Javascript-08:-Objects.md)
+9. [Classes](https://github.com/hyemmie/developStudy/blob/master/Javascript/Javascript-09:-Classes.md)
+10. [Enviroment Configuration](https://github.com/hyemmie/developStudy/blob/master/Javascript/Javascript-10:-Enviroment-Configuration.md)
+11. [Modules](https://github.com/hyemmie/developStudy/blob/master/Javascript/Javascript-11:-Modules.md)
+12. [Promise](https://github.com/hyemmie/developStudy/blob/master/Javascript/Javascript-12:-Promise.md)
+13. [Async & Await](https://github.com/hyemmie/developStudy/blob/master/Javascript/Javascript-13:-Async-&-Await.md)
+14. [Requests](https://github.com/hyemmie/developStudy/blob/master/Javascript/JavaScript-14:-Requests.md)
 
 ### React.js
 
-[1. 개발환경 세팅](https://github.com/hyemmie/developStudy/blob/master/React.js/React-00-:개발환경-세팅.md)
-[2. JSX](https://github.com/hyemmie/developStudy/blob/master/React.js/React-01.1:-JSX.md)
-[3. Components](https://github.com/hyemmie/developStudy/blob/master/React.js/React-01.2:-Components.md)
-[4. Components Interacting](https://github.com/hyemmie/developStudy/blob/master/React.js/React-01.3:-Components-Interacting.md)
+1. [개발환경 세팅](https://github.com/hyemmie/developStudy/blob/master/React.js/React-00-:개발환경-세팅.md)
+2. [JSX](https://github.com/hyemmie/developStudy/blob/master/React.js/React-01.1:-JSX.md)
+3. [Components](https://github.com/hyemmie/developStudy/blob/master/React.js/React-01.2:-Components.md)
+4. [Components Interacting](https://github.com/hyemmie/developStudy/blob/master/React.js/React-01.3:-Components-Interacting.md)
 
 ## 일정
 
