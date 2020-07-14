@@ -1,256 +1,145 @@
-# 5. Array (배열)
+# Scope
 
-  
+* 되도록 var 은 사용하지 않기! let과 const
+* 되도록 전역 변수 사용하지 않기!
+
+### Scope란
+
+스코프란 **변수가 선언되는 범위**를 의미한다. 
+
+**스코프 밖**에서는 **스코프 안의 변수**를 볼 수 **없다.**
+
+**스코프 안**에서는 **스코프 밖의 변수**를 볼 수 **있다.**
+
+<img src="https://miro.medium.com/max/1250/1*94wTu61tmltShnyb5U0kgw.png"  />
+
+### Block
+
+블록은 중괄호 `{ }` 로 묶인 부분을 의미한다. (Object, Class, Function 등등)
+
+### Scope 의 종류
+
+스코프는 아래와 같이 분류할 수 있다. 
+
+- **Global Scope(전역 스코프)**
+- **Local Scope(지역 스코프)**
+  - **Function Scope(함수 스코프)**
+  - **Block Scope(블록 스코프)**
+
+#### Global Scope
+
+변수가 함수 바깥이나 중괄호 `{}` 바깥에 선언되었다면, **Global Scope**에 정의되었다고 한다.
+
+전역 변수를 선언하면, 코드 전체에서 해당 변수를 사용할 수 있다.
+
+그러나 변수의 충돌을 막기 위해 전역 변수를 선언하는 것은 피하는 게 좋다(재선언, 재할당 에러)
+
+> Node.js 에서는 전역스코프를 다르게 정의한다고 한다(추후에 찾아볼 것)
+
+#### Local Scope
+
+변수를 코드의 특정 부분에서만 사용할 수 있다면, **Local Scope**에 정의되었다고 한다.
+
+지역변수에는 Function Scope 와 Block Scope 의 두 종류가 존재한다.
+
+##### Function Scope
+
+함수 내부에서 변수를 선언하면, **Function Scope**에 정의되었다고 한다.
+
+해당 변수들은 선언한 **함수 내부에서만 사용 가능**하다
+
+##### Block Scope
+
+중괄호 `{}` 내부에서 const 또는 let으로 변수를 선언하면, **Block Scope**에 정의되었다고 한다. 
+
+해당 변수들은 **중괄호 블록 내부에서만 사용 가능**하다.
 
 
 
-## 5.1  Array란?
+### 함수 호이스팅
 
-* Array 는 파이썬의 리스트와 비슷 (그러나 미묘하게 다르다!)
-* **다수의 데이터**를 저장하고 처리하기 위해 사용한다.  (심지어 함수도 들어갈 수 있다!)
-
-#### Array 의 선언법
-
-```javascript
-let jsArray = ['a', 1, 'storage']   //기본적인 방법
-
-let jsArray = Array('a', 1, 'storage')   //이 방법도 가능하다!
-let jsArray = new Array('a', 1, 'storage')
-
-let jsArray = []   //빈 Array를 선언할 수도 있다
-let jsArray = Array()
-```
-  
-  
-## 5.2  Array 의 인덱스
-
-![](https://s3.amazonaws.com/codecademy-content/courses/learn-javascript-arrays/array+indices.svg)
-
-```javascript
-const jsArray = [ 'a', 'b', 'c', 'd', 'e' ]
-//jsArray[0] = 'a' 
-//jsArray[1] = 'b' 
-//... 
-//jsArray[4] = 'e'  
-```
-
-* 인덱스는 순서대로 [0] [1] [2] ...  
-* 첫번째가 [0] 부터 시작한다. 
-* **1부터 시작하는 것이 아님에 주의!**
-   
-#### 참고. Python과의 차이!
-* 자바스크립트에는 [-1] 인덱스가 존재하지 않는다.
-```javascript
-//javascript
-let jsArray = ['a', 'b', 'c']
-console.log(jsArray[-1])  //Error!!
-```
-```python
-# python
-pyArray = ['a', 'b', 'c']
-print(pyArray[-1])  # 'c' 출력
-```
-  
-  
-## 5.3  let 과 const의 차이?
-
-* **var**   :  mutable, 재선언 가능,    재할당 가능    
-* **let**   :  mutable, 재선언 **불가능**, 재할당 가능 
-* **const** :  mutable, 재선언 **불가능**, 재할당 **불가능**
-
-```javascript
-let letArray = ['a', 'b', 'c']  	//재선언 불가능, 재할당 가능 
-
-letArray[2] = 'd'			//mutable, 결과: ['a', 'b', 'd']
-let letArray = [1, 2, 3]		//재선언! Error!!
-letArray = [1, 2, 3]			//재할당, 결과: [ 1, 2, 3 ]
-```
-
-```javascript
-const constArray = ['a', 'b', 'c']	//재선언 불가능, 재할당 불가능
-
-constArray[2] = 'd'			//mutable, 결과: ['a', 'b', 'd']
-const constArray = [1, 2, 3]   		//재선언! Error!
-constArray = [1, 2, 3]			//재할당! Error!
-```
-​    *mutable 이란 Array 의 element 하나하나를 바꾸는 것은 가능하다는 뜻
-  
-  
-## 5.4  Array 의 길이 
-* Array의 길이를 구할때는 .length 를 이용한다.
-```javascript
-let jsArray = [ 'a', 'b', 'c', 'd', 'e' ]
-console.log(jsArray.length)	// 5
-```
-  
-#### 참고. Python과의 차이!
-```javascript
-//javascript
-let jsArray = ['a', 'b', 'c']
-console.log(jsArray.length)  // 3
-```
-```python
-# python
-pyArray = ['a', 'b', 'c']
-print(len(pyArray))  # 3
-```
-   
-  
-## 5.4  여러가지 method
-
-**요소 추가**
-
-* push :  Array 의 맨 마지막에 요소를 추가
-
-```javascript
-let jsArray = ['a', 'b', 'c', 'd']
-jsArray.push('e', 'f')
-// jsArray = ['a', 'b', 'c', 'd', 'e', 'f']
-```
-
-* unshift :  Array 의 맨 처음에 요소를 추가
-
-```javascript
-let jsArray = ['a', 'b', 'c', 'd']
-jsArray.unshift('A', 'B')
-// jsArray = ['A', 'B', 'a', 'b', 'c', 'd']
-```
-
-  
-
-**요소 제거**
-
-* pop :  Array 의 맨 마지막 요소를 제거
-
-```javascript
-let jsArray = ['a', 'b', 'c', 'd']
-
-let popped = jsArray.pop()  
-// popped = 'd'
-// jsArray = ['a', 'b', 'c']
-
-jsArray.pop()  
-// jsArray = ['a', 'b']
-```
-
-* shift :  Array 의 맨 처음 요소를 제거
-
-```javascript
-let jsArray = ['a', 'b', 'c', 'd']
-let shifted = jsArray.shift()
-//  shifted = 'a'
-//  jsArray = ['b', 'c', 'd']
-
-jsArray.shift()
-//  jsArray = ['c', 'd']
-```
-
-  
-
-* join :  Array의 요소들을 이어붙여 문자열로 반환
-
-```javascript
-let jsArray = ['a', 'b', 'c', 'd']
-console.log(jsArray.join())  	// a,b,c,d
-console.log(jsArray.join(''))	// abcd
-console.log(jsArray.join('-'))	// a-b-c-d
-```
-  
-* slice :   Array 에 범위를 지정해 잘라낸다. 	**slice(시작index, 끝index)** 
-
-```javascript
-let jsArray = ['a', 'b', 'c', 'd', 'e']
-let x = jsArray.slice(2)	//[2] 부터 끝까지    x = ['c', 'd', 'e']
-let y = jsArray.slice(2,4)	//[2] 이상 [4] 미만  y = ['c', 'd']
-```
-  
-* splice :  요소를 Array내의 특정 index 앞에 insert 하거나, replace한다
-
-  splice( index,  **0 or 1**,   Element )
-
-  0이면 insert, 1이면 replace
-
-```javascript
-let jsArray = ['a', 'b', 'c', 'd']
-
-jsArray.splice(1, 0, 'B') 
-// jsArray = ['a', 'B', 'b', 'c', 'd']
-
-jsArray.splice(1, 0, 'C') 
-// jsArray = ['a', 'C', 'b', 'c', 'd']
-```
-  
-* concat :  두개의 Array를 붙인다.
-
-```javascript
-let jsArray1 = ['a', 'b', 'c', 'd']
-let jsArray2 = ['e', 'f', 'g', 'h']
-
-let jsArray3 = jsArray1.concat(jsArray2)
-// jsArray3 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
-```
-  
-* indexOf : 해당 요소의 인덱스를 반환
+**함수 선언식(function declaration)**
 
 ```js
-let jsArray = ['a', 'b', 'c', 'd']
-
-let index = jsArray.indexOf('c')
-// index = 2
-
-let index = jsArray.indexOf('e')
-// index = -1  (없으면 -1 을 반환한다)
+function test() {}
 ```
-  
-더 많은 methods 는 아래의 링크에서.
 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
-  
-  
-## 5.5  Array 와 함수
-
-* 함수의 입력으로 Array를 받는 경우
+함수 선언식으로 선언되면 스코프의 최상단으로 호이스팅된다. 즉, 함수가 선언된 위치와 상관 없이 코드 어느곳에서도 함수를 사용할 수 있다.
 
 ```js
-let jsArray = ['a', 'b', 'c', 'd']
-
-function addE(arr) {
-    arr.push('e')
+sayHello()
+function sayHello () {
+  console.log('hello')
 }
-addE(jsArray)	//jsArray = ['a', 'b', 'c', 'd', 'e']
 ```
-  
-* Array 의 요소로 함수를 받는 경우
+
+
+
+**함수 표현식(function expression)**
 
 ```js
-const func1 = function () {
-  console.log('output1')
-}
+const test = function() {}
 
-function func2 () {
-  console.log('output2')
-}
-
-const func3 = () => {console.log('output3')}
-
-let funcArray = [func1, func2, func3];
-console.log(funcArray)
-// [ [Function: func1], [Function: func2], [Function: func3] ]
-
-funcArray[1]()
-// output2
+const test = () => {}
 ```
-  
-  
-## 5.6  Nested Array (다차원 배열)
 
-* 양파 껍질 인덱스
+함수 표현식으로 선언되면 호이스팅되지 않는다. 함수가 선언된 아래줄부터 함수를 사용할 수 있다.
 
 ```js
-const jsArray = [[1,2], [3,4], [5,6]]
-// 3은 어디에 있지?
-// 2번째 요소의 1번째 항!
-// jsArray[1][0]
+sayHello() // Error, sayHello is not defined
+const sayHello = function () {
+  console.log("hello")
+}
+```
 
-console.log(jsArray[1][0])	// 3
+
+
+### Scope Pollution
+
+함수 내에서 변수의 값을 재할당 하면, 함수의 호출과 함께 전역 변수의 값이 바뀐다. 
+
+이를 Scope Pollution 이라 한다.
+
+이를 막기 위해 전역 변수를 const 로 선언해주거나, 블록 내에서 변수를 새로 선언해주도록 하자! (재할당 하지 않도록 주의!)
+
+```js
+let stars = 'North Star';
+
+const callMyNightSky = () => {
+  	let stars = 'Sirius';   	//블록 내에서 변수가 선언이 되었다
+};
+callMyNightSky();       
+console.log(stars)       		// North Star 출력
+```
+
+```js
+let stars = 'North Star';
+
+const callMyNightSky = () => {
+  	stars = 'Sirius';	   		// 블록 안에서 변수 선언 X, 블록 밖의 stars 를 호출
+};
+callMyNightSky(); 				// 함수를 호출, stars = ‘Sirius’ 로 바뀐다
+
+console.log(stars)       		// Sirius 출력
+```
+
+
+
+### Scope Chain
+
+함수 내에서 변수를 호출하면 변수의 범위를 호출한 함수의 지역 스코프부터 전역 변수들이 있는 전역 스코프까지 **점차 범위를 넓혀가며** 찾는다. 이를 **Scope Chain** 이라 한다
+
+```js
+var name = 'zero'; 		//3. 여기 있구나!!
+function outer() { 		
+  console.log('외부', name); 		//2. 여기도 없네?
+  function inner() { 
+    var enemy = 'nero'; 		//6. 이건 블록 안에 있어서 볼 수 없다! 에러 반환
+    console.log('내부', name);  	//1. name 이 어디 있지???
+  } 
+  inner();  
+} 
+outer(); 					//4. zero 두번 출력
+console.log(enemy); // undefined	//5. enemy는 어디 있지?
+
 ```
