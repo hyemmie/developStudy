@@ -20,7 +20,7 @@ let jsArray = Array()
 
 ## 5.2  Array 의 인덱스
 
-![](https://s3.amazonaws.com/codecademy-content/courses/learn-javascript-arrays/array+indices.svg)
+![](../img/array1.svg)
 
 ```javascript
 const jsArray = [ 'a', 'b', 'c', 'd', 'e' ]

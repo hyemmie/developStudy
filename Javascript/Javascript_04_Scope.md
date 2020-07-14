@@ -3,7 +3,7 @@
 * 되도록 var 은 사용하지 않기! let과 const
 * 되도록 전역 변수 사용하지 않기!
 
-### Scope란
+## Scope란
 
 스코프란 **변수가 선언되는 범위**를 의미한다. 
 
@@ -11,13 +11,13 @@
 
 **스코프 안**에서는 **스코프 밖의 변수**를 볼 수 **있다.**
 
-<img src="https://miro.medium.com/max/1250/1*94wTu61tmltShnyb5U0kgw.png"  />
+<img src="../img/scope1.png"  />
 
-### Block
+## Block
 
 블록은 중괄호 `{ }` 로 묶인 부분을 의미한다. (Object, Class, Function 등등)
 
-### Scope 의 종류
+## Scope 의 종류
 
 스코프는 아래와 같이 분류할 수 있다. 
 
@@ -56,9 +56,13 @@
 
 
 
-### 함수 호이스팅
+## 함수 호이스팅
 
-**함수 선언식(function declaration)**
+호이스팅이란 코드의 실행에 앞서서 코드 전체를 훑어서 변수나 함수를 맨 위로 올려주는 것을 의미한다. 코드 아래에서 선언된 함수도 호이스팅에 의해 코드 전체에서 사용될 수 있다. 
+
+그러나! 함수 표현식으로 선언된 함수는 호이스팅되지 않는다! 아래를 보자
+
+#### 함수 선언식(function **declaration**)
 
 ```js
 function test() {}
@@ -73,9 +77,7 @@ function sayHello () {
 }
 ```
 
-
-
-**함수 표현식(function expression)**
+#### 함수 표현식(function expression)
 
 ```js
 const test = function() {}
@@ -94,7 +96,7 @@ const sayHello = function () {
 
 
 
-### Scope Pollution
+## Scope Pollution
 
 함수 내에서 변수의 값을 재할당 하면, 함수의 호출과 함께 전역 변수의 값이 바뀐다. 
 
@@ -125,7 +127,7 @@ console.log(stars)       		// Sirius 출력
 
 
 
-### Scope Chain
+## Scope Chain
 
 함수 내에서 변수를 호출하면 변수의 범위를 호출한 함수의 지역 스코프부터 전역 변수들이 있는 전역 스코프까지 **점차 범위를 넓혀가며** 찾는다. 이를 **Scope Chain** 이라 한다
 
