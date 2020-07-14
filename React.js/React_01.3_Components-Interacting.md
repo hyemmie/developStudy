@@ -2,7 +2,7 @@
 
 ## 1. Componets Render Other Components
 React 에서 아래와 같이 컴포넌트가 다른 컴포넌트를 랜더시킬 수 있다. (아래 예시에서는 Crazy 컴포넌트가 OMG 컴포넌트를 랜더시키고 있다.)
-```react
+```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -21,7 +21,7 @@ class Crazy extends React.Component {
 ## 2. this.props
 `props`는 컴포넌트가 기본적으로 가지고 있는 오브젝트이다. `this.props`를 통해 접근할 수 있으며 컴포넌트의 정보를 갖고 있다. 
 ### this.prop 기본 사용
-```react
+```javascript
 class MyComponent extends React.Component {
   render() {
   	const stringProps = JSON.stringify(this.props);
@@ -40,7 +40,7 @@ ReactDOM.render(<MyComponent foo="bar" />, document.getElementById('app'));
 ```
 `<Greeting myInfo={["top", "secret", "lol"]} />`와 같이 `string` 타입이 아닌 정보를 넣을 땐 `{}`로 감싸줘야 한다. 
 ### if문
-```react
+```javascript
 class MyComponent extends React.Component {
   render() {
   	const stringProps = JSON.stringify(this.props);
@@ -54,7 +54,7 @@ class MyComponent extends React.Component {
 ```
 ### 함수도 props로 넘길 수 있다.
 아래 예시에서는 `Talker` 클래스의 `talk()`함수를 `Button` 클래스의 `props`로 넘겨 `Button`에서 `onClick`으로 사용하는 것을 볼 수 있다. 
-```react
+```javascript
 class Button extends React.Component {
   render() {
     return (
@@ -65,7 +65,7 @@ class Button extends React.Component {
   }
 }
 ```
-```react
+```javascript
 class Talker extends React.Component {
   talk() {
     let speech = 'blah';
@@ -82,7 +82,7 @@ class Talker extends React.Component {
 |--------------------|------------|-----------------|
 | handleClick        | onClick    | click event     |
 | handleKeyPress     | onKeyPress | key press event |
-```react
+```javascript
 class Button extends React.Component {
   render() {
     return (
@@ -93,7 +93,7 @@ class Button extends React.Component {
   }
 }
 ```
-```react
+```javascript
 class Talker extends React.Component {
   handleClick() {
     let speech = '';
@@ -112,24 +112,24 @@ class Talker extends React.Component {
 `<button>`처럼 HTML-like JSX elements 일 때만 event listener가 생성된다. 
 
 ### this.props.children
-```react
+```javascript
 // Example 1: "I am a child of BigButton."
 <BigButton>
   I am a child of BigButton.
 </BigButton>
 ```
-```react
+```javascript
 // Example 2: component of <LilButton />
 <BigButton>
   <LilButton />
 </BigButton>
 ```
-```react
+```javascript
 // Example 3: undefined
 <BigButton />
 ```
 아래와 같이 ul, li 태그를 이용하여 응용할 수 있다. 
-```react
+```javascript
 class List extends React.Component {
   render() {
     return (
@@ -160,7 +160,7 @@ class App extends React.Component {
 ```
 ### defaultProps
 props에 아무런 입력이 없는 경우를 대비하여 default props를 설정할 수 있다. 
-```react
+```javascript
 class Button extends React.Component {
   render() {
     return (
@@ -181,7 +181,7 @@ ReactDOM.render(
 ## 3. this.state
 `state`는 `props`와는 다르게 바깥에서 선언할 수 없고 안에서 선언해줘야 한다. 
 기본적인 선언 방식은 아래와 같다.
-```react
+```javascript
 class Example extends React.Component {
   constructor(props) {
     super(props);
@@ -197,7 +197,7 @@ class Example extends React.Component {
 ```
 
 ### this.setState
-```react
+```javascript
 const green = '#39D1B4';
 const yellow = '#FFD712';
 

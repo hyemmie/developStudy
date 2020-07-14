@@ -39,7 +39,7 @@ DOM은 리액트 에서 사용되지만 리액트의 일부가 아니다. 다른
 
   클래스 컴포넌트 : ES6(EcmaScipt 6)에 도입된 class 문법을 사용하여 만드는 리액트 컴포넌트.<br/>
 
-``` react
+``` javascript
 class App extends React.Component{
 
 }
@@ -49,7 +49,7 @@ class App extends React.Component{
   - 클래스 컴포넌트 안에는 반드시 render() 메서드가 필요하다.<br/>
   - return()안에는 한 개의 자식만 반환된다.
 
-``` react
+``` javascript
 class Hello extends React.Component {
   render() {
     return (
@@ -84,7 +84,7 @@ function Hello(props) {
 
 HTML 태그, 컴포넌트 인스턴스와 구분할 수 있도록 리액트 컴포넌트 클래스의 첫글자는 대문자로 사용해야 한다.(JSX가 다르게 인식한다.)
 
-``` react
+``` javascript
 // This would be considered a component by React.
 <ThisComponent />
   
@@ -99,7 +99,7 @@ HTML 태그, 컴포넌트 인스턴스와 구분할 수 있도록 리액트 컴�
 멀티라인 JSX 표현식을 사용할 때 괄호들이 사용된다.<br/>
 아래의 코드블럭에서 `render()`메서드가 괄호로 쌓여 여러 줄로 나뉘어져 있는 것을 확인할 수 있다.
 
-``` react
+``` javascript
 render() {
   return (
     <blockquote>
@@ -121,7 +121,7 @@ render() {
 리액트 컴포넌트는  return 구문 전에 자바스크립트 문법을 사용할 수 있다.<br/>
 반환문 앞의 자바스크립트는 컴포넌트를 렌더하기 위한 로직을 알려준다.
 
-``` react
+``` javascript
 class Integer extends React.Component {
   render() {
     const randInteger = Math.floor(Math.random() * 10);
@@ -136,7 +136,7 @@ class Integer extends React.Component {
 리액트에서 JSX 속성값은 일반적인 자바스크립트 객체에 저장될 수 있다.
 
 
-``` react
+``` javascript
 const seaAnemones = {
   src: 'https://commons.wikimedia.org/wiki/Category:Images#/media/File:Anemones_0429.jpg',
   alt: 'Sea Anemones',
