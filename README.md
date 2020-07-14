@@ -25,7 +25,7 @@
 2. [JSX](./React.js/React_01.1_JSX.md)
 3. [Components](./React.js/React_01.2_Components.md)
 4. [Components Interacting](./React.js/React_01.3_Components-Interacting.md)
-5. [Stateless-Components-From-Stateful-Components](./React/React_02.1_Stateless-Components-From-Stateful-Components.md)
+5. [Stateless-Components-From-Stateful-Components](./React.js/React_02.1_Stateless-Components-From-Stateful-Components.md)
 
 ## 일정
 
