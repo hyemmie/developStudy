@@ -4,8 +4,7 @@
 
 ### Javascript
 
-1. [Introduction](https://github.com/hyemmie/developStudy/blob/master/Javascript/Javascript-01:-Introduction.md)
-
+1. [Introduction](./Javascript/Javascript%2004:%20Introduction.md)
 2. [Conditional Statements](https://github.com/hyemmie/developStudy/blob/master/Javascript/Javascript-02:-Conditional-Statements.md)
 3. [Functions](https://github.com/hyemmie/developStudy/blob/master/Javascript/Javascript-03:-Functions.md)
 4. [Scope](https://github.com/hyemmie/developStudy/blob/master/Javascript/Javascript-04:-Scope.md)
