@@ -17,7 +17,7 @@
 11. [Modules](./Javascript/Javascript_11_Modules.md)
 12. [Promise](./Javascript/Javascript_12_Promise.md)
 13. [Async & Await](./Javascript/Javascript_13_Async&Await.md)
-14. [Requests](./Javascript/JavaScript_14_Requests.md)
+14. [Requests](./Javascript/Javascript_14_Requests.md)
 
 ### React.js
 
