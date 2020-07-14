@@ -33,17 +33,14 @@ const jsArray = [ 'a', 'b', 'c', 'd', 'e' ]
 * 인덱스는 순서대로 [0] [1] [2] ...  
 * 첫번째가 [0] 부터 시작한다. 
 * **1부터 시작하는 것이 아님에 주의!**
-
+  
 #### 참고. Python과의 차이!
-
 * 자바스크립트에는 [-1] 인덱스가 존재하지 않는다.
-
 ```javascript
 //javascript
 let jsArray = ['a', 'b', 'c']
 console.log(jsArray[-1])  //Error!!
 ```
-
 ```python
 # python
 pyArray = ['a', 'b', 'c']
@@ -72,27 +69,22 @@ constArray[2] = 'd'			//mutable, 결과: ['a', 'b', 'd']
 const constArray = [1, 2, 3]   		//재선언! Error!
 constArray = [1, 2, 3]			//재할당! Error!
 ```
-
 ​    *mutable 이란 Array 의 element 하나하나를 바꾸는 것은 가능하다는 뜻
 
 
 ## 5.4  Array 의 길이 
-
 * Array의 길이를 구할때는 .length 를 이용한다.
-
 ```javascript
 let jsArray = [ 'a', 'b', 'c', 'd', 'e' ]
 console.log(jsArray.length)	// 5
 ```
 
 #### 참고. Python과의 차이!
-
 ```javascript
 //javascript
 let jsArray = ['a', 'b', 'c']
 console.log(jsArray.length)  // 3
 ```
-
 ```python
 # python
 pyArray = ['a', 'b', 'c']
@@ -258,4 +250,3 @@ const jsArray = [[1,2], [3,4], [5,6]]
 
 console.log(jsArray[1][0])	// 3
 ```
-

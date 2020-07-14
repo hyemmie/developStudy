@@ -141,5 +141,4 @@ function outer() {
 } 
 outer(); 					//4. zero 두번 출력
 console.log(enemy); // undefined	//5. enemy는 어디 있지?
-
 ```
