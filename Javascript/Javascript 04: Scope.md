@@ -1,8 +1,17 @@
 # Scope
 
+* 되도록 var 은 사용하지 않기! let과 const
+* 되도록 전역 변수 사용하지 않기!
+
 ### Scope란
 
-스코프란 **변수가 선언되는 범위**를 의미한다.
+스코프란 **변수가 선언되는 범위**를 의미한다. 
+
+**스코프 밖**에서는 **스코프 안의 변수**를 볼 수 **없다.**
+
+**스코프 안**에서는 **스코프 밖의 변수**를 볼 수 **있다.**
+
+<img src="https://miro.medium.com/max/1250/1*94wTu61tmltShnyb5U0kgw.png"  />
 
 ### Block
 
@@ -37,19 +46,36 @@
 
 함수 내부에서 변수를 선언하면, **Function Scope**에 정의되었다고 한다.
 
+해당 변수들은 선언한 **함수 내부에서만 사용 가능**하다
+
 ##### Block Scope
 
+중괄호 `{}` 내부에서 const 또는 let으로 변수를 선언하면, **Block Scope**에 정의되었다고 한다. 
+
+해당 변수들은 **중괄호 블록 내부에서만 사용 가능**하다.
 
 
-잠깐!
 
-함수 선언식(function declaration)
+### 함수 호이스팅
+
+**함수 선언식(function declaration)**
 
 ```js
 function test() {}
 ```
 
-함수 표현식(function expression)
+함수 선언식으로 선언되면 스코프의 최상단으로 호이스팅된다. 즉, 함수가 선언된 위치와 상관 없이 코드 어느곳에서도 함수를 사용할 수 있다.
+
+```js
+sayHello()
+function sayHello () {
+  console.log('hello')
+}
+```
+
+
+
+**함수 표현식(function expression)**
 
 ```js
 const test = function() {}
@@ -57,33 +83,24 @@ const test = function() {}
 const test = () => {}
 ```
 
+함수 표현식으로 선언되면 호이스팅되지 않는다. 함수가 선언된 아래줄부터 함수를 사용할 수 있다.
+
+```js
+sayHello() // Error, sayHello is not defined
+const sayHello = function () {
+  console.log("hello")
+}
+```
 
 
 
+### Scope Pollution
 
-<img src="https://miro.medium.com/max/1250/1*94wTu61tmltShnyb5U0kgw.png"  />
+함수 내에서 변수의 값을 재할당 하면, 함수의 호출과 함께 전역 변수의 값이 바뀐다. 
 
+이를 Scope Pollution 이라 한다.
 
-
-블록 밖에서는 블록 안의 변수를 볼 수 **없다.**
-
-블록 안에서는 블록 밖의 변수를 볼 수 **있다.**
-
-
-
-Scope Pollution
-
-일반적으로 블록 안의 변수는 블록 밖에 영향을 끼치지 못한다
-
-함수를 호출하면 변수가 바뀐다
-
-
-
-자바스크립트는 변수의 범위를 호출한 함스의 지역 스코프부터 전역 변수들이 있는 전역 스코프까지 점차 넓혀가며 찾는다
-
-이를 Scope Chain 이라 한다
-
-재선언? 재할당?
+이를 막기 위해 전역 변수를 const 로 선언해주거나, 블록 내에서 변수를 새로 선언해주도록 하자! (재할당 하지 않도록 주의!)
 
 ```js
 let stars = 'North Star';
@@ -108,19 +125,21 @@ console.log(stars)       		// Sirius 출력
 
 
 
-Scope Chain 예시
+### Scope Chain
+
+함수 내에서 변수를 호출하면 변수의 범위를 호출한 함수의 지역 스코프부터 전역 변수들이 있는 전역 스코프까지 **점차 범위를 넓혀가며** 찾는다. 이를 **Scope Chain** 이라 한다
 
 ```js
-var name = 'zero'; 		//여기 있구나!!
+var name = 'zero'; 		//3. 여기 있구나!!
 function outer() { 		
-  console.log('외부', name); 		//여기도 없네?
+  console.log('외부', name); 		//2. 여기도 없네?
   function inner() { 
-    var enemy = 'nero'; 		//이건 블록 안에 있어서 볼 수 없다! 에러 반환
-    console.log('내부', name);  	//name 이 어디 있지???
+    var enemy = 'nero'; 		//6. 이건 블록 안에 있어서 볼 수 없다! 에러 반환
+    console.log('내부', name);  	//1. name 이 어디 있지???
   } 
   inner();  
 } 
-outer(); 
-console.log(enemy); // undefined	//enemy는 어디 있지?
+outer(); 					//4. zero 두번 출력
+console.log(enemy); // undefined	//5. enemy는 어디 있지?
 
 ```
