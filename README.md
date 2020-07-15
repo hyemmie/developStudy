@@ -26,7 +26,7 @@
 3. [Components](./React.js/React_01.2_Components.md)
 4. [Components Interacting](./React.js/React_01.3_Components-Interacting.md)
 5. [Stateless-Components-From-Stateful-Components](./React.js/React_02.1_Stateless-Components-From-Stateful-Components.md)
-
+6. [Advanced React](./React.js/React_02.2_Advanced-React.md)
 ## 일정
 
 매주 월/금 1시~3시, 수 7:30~9:30분 (7/29 부터)
