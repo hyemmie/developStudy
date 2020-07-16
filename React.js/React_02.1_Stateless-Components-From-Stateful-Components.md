@@ -254,6 +254,8 @@ class Child extends React.Component {
 		// 웹페이지에 표시되는 내용(Sibling에서 담당)이 바뀌려면 새로 render되어야 하지 않나?
     // 이후에 render 가 다시 일어나나??? 새로고침 없이 값이 바뀌는데, 어떤 원리이지? 
     // Ajax 같은건가..? 
+    // 맞구나! 새로고침 없이 값만 다시 render
+    // setState 자체가 다시 렌더하는 것을 포함
   }
 
   render() {
