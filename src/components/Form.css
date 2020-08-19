@@ -7,7 +7,7 @@
   font-size: 1.25rem;
   outline: none;
   border: none;
-  border-bottom: 1px solid #c5f6fa;
+  border-bottom: 1px solid black;
 }
 
 .create-button {
@@ -16,7 +16,7 @@
   padding-left: 1rem;
   padding-right: 1rem;
   margin-left: 1rem;
-  background: #22b8cf;
+  background: black;
   border-radius: 3px;
   color: white;
   font-weight: 600;
@@ -24,5 +24,9 @@
 }
 
 .create-button:hover {
-  background: #3bc9db;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+  transition: all 0.3s ease 0s;
+  background-color:white;
+  color:black;
 }

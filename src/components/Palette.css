@@ -4,11 +4,12 @@
 }
 
 .color {
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
   opacity: 0.5;
   transition: all 0.2s;
   cursor: pointer;
+  border-radius: 50px;
 }
 
 .color:hover {

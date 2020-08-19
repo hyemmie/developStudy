@@ -14,11 +14,11 @@ class App extends Component {
   state = {
     input: '',
     todos: [
-      { id: 0, text: ' 리액트 소개', checked: false },
-      { id: 1, text: 'JSX 사용해보기', checked: true },
-      { id: 2, text: '라이프 사이클 이해하기', checked: false },
+      { id: 0, text: ' 리액트 스터디 하기', checked: false },
+      { id: 1, text: '리액트 훅 공부하기', checked: true },
+      { id: 2, text: '집 청소 하기', checked: false },
     ],
-    color: '#343a40'
+    color: 'black'
   }
 
   handleChange = (e) => {
@@ -75,7 +75,7 @@ class App extends Component {
     });
   }
 
-  handleSelectColor = (color) => {
+  handleColor = (color) => {
     this.setState({
       color
     })
@@ -89,7 +89,7 @@ class App extends Component {
       handleKeyPress,
       handleToggle,
       handleRemove,
-      handleSelectColor
+      handleColor
     } = this;
 
     return (
@@ -103,7 +103,7 @@ class App extends Component {
         />
       )}
         palette={(
-          <Palette colors={colors} selected={color} onSelect={handleSelectColor}/>
+          <Palette colors={colors} selected={color} onSelect={handleColor}/>
         )}>
         <TodoItemList todos={todos} onToggle={handleToggle} onRemove={handleRemove}/>
       </TodoListTemplate>
