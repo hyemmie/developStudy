@@ -2,14 +2,22 @@ import React, { Component } from 'react';
 import TodoListTemplate from './components/TodoListTemplate';
 import Form from './components/Form';
 import TodoItemList from './components/TodoItemList';
+import Palette from './components/Palette';
 class App extends Component {
   id = 3;
   state = {
+    selected: '#343a40',
+    colors: [
+      { color: '#343a40' },
+      { color: '#f03e3e' },
+      { color: '#12b886' },
+      { color: '#228ae6' },
+    ],
     input: '',
     todos: [
-      { id: 0, text: ' 리액트 소개', checked: false },
-      { id: 1, text: ' 리액트 소개', checked: true },
-      { id: 2, text: ' 리액트 소개', checked: false },
+      { id: 0, text: ' 리액트 소개', checked: false, color: '#343a40' },
+      { id: 1, text: ' 리액트 소개', checked: true, color: '#343a40' },
+      { id: 2, text: ' 리액트 소개', checked: false, color: '#343a40' },
     ],
   };
   handleChange = (e) => {
@@ -20,13 +28,14 @@ class App extends Component {
   };
   handleCreate = () => {
     console.log('create');
-    const { input, todos } = this.state;
+    const { selected, input, todos } = this.state;
     this.setState({
       input: '',
       todos: todos.concat({
         id: this.id++,
         text: input,
         checked: false,
+        color: selected,
       }),
     });
   };
@@ -58,18 +67,31 @@ class App extends Component {
       todos: todos.filter((todo) => todo.id !== id),
     });
   };
+  handleSelect = (nextcolor) => {
+    this.setState({
+      selected: nextcolor,
+    });
+  };
   render() {
-    const { input, todos } = this.state;
-    const { handleChange, handleCreate, handleKeyPress } = this;
+    const { selected, colors, input, todos } = this.state;
+    const { handleChange, handleCreate, handleKeyPress, handleSelect } = this;
     console.log('app');
     return (
       <TodoListTemplate
+        palette={
+          <Palette
+            colors={colors}
+            selected={selected}
+            onSelect={handleSelect}
+          />
+        }
         form={
           <Form
             value={input}
             onKeyPress={handleKeyPress}
             onChange={handleChange}
             onCreate={handleCreate}
+            color={selected}
           />
         }
       >
