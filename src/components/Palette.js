@@ -1,9 +1,9 @@
 import React from 'react';
 import './Palette.css';
 
-const Color = ({ color, active, onClick }) => {
+const Color = ({ color, select, onClick }) => {
   return (
-    <div className={`color ${active && 'active'}`} style={{ background: color}} onClick={onClick}>
+    <div className={`color ${select && 'active'}`} style={{ background: color}} onClick={onClick}>
     
     </div>
   )
@@ -11,7 +11,7 @@ const Color = ({ color, active, onClick }) => {
 
 const Palette = ({colors, selected, onSelect}) => {
   const colorList = colors.map(
-    (color) => (<Color color={color} active={selected===color} onClick={() => onSelect(color)} key={color}/>)
+    (color) => (<Color color={color} select={selected===color} onClick={() => onSelect(color)} key={color}/>)
   );
   return (
     <div className="palette">

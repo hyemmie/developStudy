@@ -3,6 +3,7 @@ import TodoListTemplate from './components/TodoListTemplate';
 import Form from './components/Form';
 import TodoItemList from './components/TodoItemList';
 import Palette from './components/Palette';
+import Calendar from './components/Calendar';
 
 
 const colors = ['#343a40', '#f03e3e', '#12b886', '#228ae6'];
@@ -14,9 +15,9 @@ class App extends Component {
   state = {
     input: '',
     todos: [
-      { id: 0, text: ' 리액트 스터디 하기', checked: false },
-      { id: 1, text: '리액트 훅 공부하기', checked: true },
-      { id: 2, text: '집 청소 하기', checked: false },
+      { id: 0, text: ' 리액트 스터디 하기', checked: false, day: '9/10' },
+      { id: 1, text: '리액트 훅 공부하기', checked: true, day: '9/10'},
+      { id: 2, text: '집COR 청소 하기', checked: false, day: '9/10' },
     ],
     color: 'black'
   }
@@ -28,7 +29,7 @@ class App extends Component {
   }
 
   handleCreate = () => {
-    const { input, todos, color } = this.state;
+    const { input, todos, color, day } = this.state;
     this.setState({
       input: '', // 인풋 비우고
       // concat 을 사용하여 배열에 추가
@@ -36,7 +37,8 @@ class App extends Component {
         id: this.id++,
         text: input,
         checked: false,
-        color
+        color,
+        day: day
       })
     });
   }
@@ -81,15 +83,26 @@ class App extends Component {
     })
   }
 
+  handleDay = (day) => {
+    this.setState({
+      day: day
+    })
+  }
+
+  // updateInput(key,value) {
+  //   this.setState({[key]:value });
+  // }
+
   render() {
-    const { input, todos, color } = this.state;
+    const { input, todos, color, day } = this.state;
     const {
       handleChange,
       handleCreate,
       handleKeyPress,
       handleToggle,
       handleRemove,
-      handleColor
+      handleColor,
+      handleDay
     } = this;
 
     return (
@@ -100,11 +113,16 @@ class App extends Component {
           onChange={handleChange}
           onCreate={handleCreate}
           color={color}
+          day={day}
         />
       )}
         palette={(
           <Palette colors={colors} selected={color} onSelect={handleColor}/>
-        )}>
+        )}
+        calendar={(
+          <Calendar day={day} onChoose={handleDay}/>
+        )}
+        >
         <TodoItemList todos={todos} onToggle={handleToggle} onRemove={handleRemove}/>
       </TodoListTemplate>
     );
