@@ -12,6 +12,6 @@ const Calendar = ({day, onChoose}) => {
     );
 };
 
-// YYYY-MM-DD
+// YYYY-MM-DD 이렇게?
 
 export default Calendar;
